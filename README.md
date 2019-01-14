@@ -1,68 +1,15 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Vocab
 
-## Available Scripts
+* `state` : State is some default values you want for your Component. We can update state and even reference state when passing down props. Whenver our state is updated, a rerender happens.
 
-In the project directory, you can run:
+* `prop` : a custom attribute we are adding onto our Component to use. We can call this anything we want and it can be any kind of data. One thing to remember is whatever you cal it when you render the component, you have to call it when you go to use it inside of the component
 
-### `npm start`
+* `conditionally render` : We can tell React to display different components or data with a ternary or if/else statement. This works just like a normal ternary where we evaluate something. If it evaluates to `true` do this, else do something else.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Walkthrough
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+If you are feeling shaky with props, no worries. Just keep after it.
 
-### `npm test`
+Look through the code and read each comment. Notice that we can call props whatever we want. What makes it a prop is that we are displaying our Component we created and then adding something custom onto it. See where it gets its value. Is it from state? Is it hard coded? Once you have an idea, navigate to the actual component and see how the prop is being used. Remember if we have a component called `<DisplayName userName='Bryan' />`, inside of DisplayName.js, we now have access to `this.props.PROPNAME` but whatever we called it when we displayed it, we have to call it that in our component structure. What would we call our prop in `DisplayName.js`?
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+`this.props.userName`. Remember, casing matters. Whatever you call it above, you have to call it below.
