@@ -6,6 +6,16 @@
 
 * `conditionally render` : We can tell React to display different components or data with a ternary or if/else statement. This works just like a normal ternary where we evaluate something. If it evaluates to `true` do this, else do something else.
 
+* `this.state ={}` : will set our initial data about the component. Used with class based components
+
+* `props` : Can be named whatever we want but should make sense. We use props to pass data/information from parent to child. This can be anything (functions, variables, something off of state)
+
+* `class based component` : uses the `class NAME extends Component {}` syntax. Has access to the constructor, state inside the constructor and lifecylce methods if you choose to use them. Accesses props by this.props.PROPNAME
+
+* `stateless functional components` : uses `const NAME = () => ()` OR `function NAME(){}` syntax. DOES NOT have direct access to state. Does not have access to lifecylce methods or constructors. Accesses props via props.PROPNAME. props needs to be passed in as argument to access.
+
+* `bind` : There are three ways to bind methods to the this keyword. One method is public class fields (look it up, we didn't cover it as it is experimental), using .bind like this.METHODNAME = this.METHODNAME.bind(this) or when the function is used using an arrow function like this onClick={() => this.METHODNAME()}
+
 ## Walkthrough
 
 If you are feeling shaky with props, no worries. Just keep after it.
