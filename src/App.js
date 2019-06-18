@@ -18,16 +18,17 @@ class App extends Component {
 			selectedColor: 'orange'
 		}
 		// this is one way to bind the this keyword. we generally having been using the arrow funtion syntax
-		// this.handleNameUpdate = this.handleNameUpdate.bind(this)
+		this.handleNameUpdate = this.handleNameUpdate.bind(this)
+		this.handleSelectedColorUpdate = this.handleSelectedColorUpdate.bind(this)
 	}
 
 	//custom method that updates the value of userName on state via a passed in value
 	//remember value is just a parameter here
-	handleNameUpdate(value) {
+	handleNameUpdate(e) {
 		// console.log('update name ran')
-		// console.log(value)
+		// console.log(e)
 		this.setState({
-			userName: value
+			userName: e.target.value
 		})
 	}
 
@@ -56,7 +57,7 @@ class App extends Component {
 			<div className='App'>
 				{/* input to handle adding a username onto state which will be displayed in our Header component
         but how do we user the value on state? check out the answer near the use of the Header component */}
-				<input onChange={(e) => this.handleNameUpdate(e.target.value)} />
+				<input onChange={this.handleNameUpdate} />
 				{/* ternary to decide if we should display our Header and Color/Selected Color components or just show some text. this is called conditional rendering. if this.state.userName is truthy, show the good stuff, otherwise show some text */}
 				{this.state.userName ? (
 					<div>
@@ -66,10 +67,12 @@ class App extends Component {
 						{/* Color component has two props, backgroundColor which will literally set the background color in css inside of the component, and method which is just a reference to the custom handleSelectedColorUpdate component we created which updates the larger divs background color and text */}
 						<Color
 							backgroundColor={'tomato'}
-							method={(data) => this.handleSelectedColorUpdate(data)}
+							// Here we are using the .bind version of this function
+							method={this.handleSelectedColorUpdate}
 						/>
 						<Color
 							backgroundColor={'aquamarine'}
+							// here we are using the arrow function binding
 							method={(data) => this.handleSelectedColorUpdate(data)}
 						/>
 						<Color
